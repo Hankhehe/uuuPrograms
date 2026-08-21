@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>控制台面板</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card-bg: #1e293b;
+      --text: #f8fafc;
+      --btn-sync: #2563eb;
+      --btn-sync-hover: #1d4ed8;
+      --btn-config: #0d9488;
+      --btn-config-hover: #0f766e;
+      --btn-test: #e11d48;
+      --btn-test-hover: #be123c;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .container {
+      background-color: var(--card-bg);
+      padding: 32px 24px;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+      width: 100%;
+      max-width: 480px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 1.5rem;
+      margin-bottom: 24px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    .button-group {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .btn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 14px 20px;
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: #ffffff;
+      text-decoration: none;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      width: 100%;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+    }
+
+    .btn:active {
+      transform: translateY(0);
+    }
+
+    .btn-sync {
+      background-color: var(--btn-sync);
+    }
+    .btn-sync:hover {
+      background-color: var(--btn-sync-hover);
+    }
+
+    .btn-config {
+      background-color: var(--btn-config);
+    }
+    .btn-config:hover {
+      background-color: var(--btn-config-hover);
+    }
+
+    .btn-test {
+      background-color: var(--btn-test);
+    }
+    .btn-test:hover {
+      background-color: var(--btn-test-hover);
+    }
+
+    @media (min-width: 640px) {
+      .container {
+        padding: 40px 32px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <main class="container">
+    <h1>控制台快捷入口</h1>
+    <div class="button-group">
+      <button 
+        type="button"
+        class="btn btn-sync" 
+        onclick="openNewWindow('https://suitably-pouncing-unengaged.ngrok-free.dev/form/449f1a06-938d-4639-bfd4-abf88c975a00')">同步</button>
+
+      <button 
+        type="button"
+        class="btn btn-config" 
+        onclick="openNewWindow('https://docs.google.com/spreadsheets/d/1tcamiIUxogNlOzThaVwh5Ar-S8YBqAasyXS0tn69i-o/edit?gid=1796049978#gid=1796049978')">設定</button>
+
+      <button 
+        type="button"
+        class="btn btn-test" 
+        onclick="openNewWindow('https://hankhehe.github.io/uuuPrograms/off_days_viewer.html')">測試</button>
+    </div>
+  </main>
+
+  <script>
+    function openNewWindow(url) {
+      const width = 1200;
+      const height = 800;
+      const left = (window.screen.width - width) / 2;
+      const top = (window.screen.height - height) / 2;
+
+      window.open(
+        url,
+        '_blank',
+        `width=${width},height=${height},top=${top},left=${left},toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable=yes`
+      );
+    }
+  </script>
+
+</body>
+</html>
